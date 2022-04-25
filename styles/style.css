@@ -17,8 +17,10 @@ a {
 
 h1 {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 20px;
+  text-decoration: ;
 }
+
 
 img {
   max-width: 100%;
@@ -63,9 +65,18 @@ img {
   border-style: solid;
 }
 
-.imglink{
-    text-decoration: none;
-  border-style: none;
+.faixa {
+  text-align: center;
+  color: white;
+  margin-top: 0px;
+  background-color: blueviolet;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.cabecalho > img{
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 /* CSS flexbox 1 */
@@ -88,6 +99,11 @@ img {
   margin-left: 30px;
   /* Não estou utilizando o "text-align: center" pq o último item fica bugado */
 }
+
+.preco{
+  text-decoration: bold;
+}
+
 .box {
   border-radius: 10px;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
@@ -96,3 +112,34 @@ img {
   transform: scale(1.25, 1.25);
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.3);
 }
+
+
+/* CSS Grid 1 */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 10px;
+  grid-gap: 10px;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.grid > div:nth-child(n+4) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.grid > div.banner1 {
+  grid-column: 1;
+  grid-row: 2 / 6;
+  display: block;
+}
+
+.grid > div.banner23 {
+  display: block;
+}
+
