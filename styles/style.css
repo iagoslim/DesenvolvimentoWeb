@@ -14,6 +14,7 @@ a {
   color: white;
 }
 
+
 h1 {
   text-align: center;
   margin-top: 100px;
@@ -34,6 +35,19 @@ img {
   padding: 20px;
 }
 
+.logo {
+  max-width: 150px;
+  display: block;
+  border-radius: 10px;
+}
+
+.carrinho {
+  max-width: 70px;
+  display: block;
+  border-radius: 5px;
+  border-style: thin;
+}
+
 .menu {
   display: flex;
 }
@@ -42,11 +56,16 @@ img {
   margin-left: 10px;
 }
 
-.menu li a {
+.menubutton {
   display: block;
   padding: 10px;
   background: blueviolet;
-  border-style: groove;
+  border-style: solid;
+}
+
+.imglink{
+    text-decoration: none;
+  border-style: none;
 }
 
 /* CSS flexbox 1 */
