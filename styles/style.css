@@ -147,3 +147,18 @@ img {
   display: block;
 }
 
+/*fundo simples*/
+
+.fundo {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 10px;
+  grid-gap: 10px;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.fundo > div{
+  width: 100%;
+  padding: 10px;
+}
+
