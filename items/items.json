@@ -1,24 +1,24 @@
 {
   "camisas": [
-    { "id": "camiseta1", "cor": "preto", "imagem": "../Imagens/Camiseta1.png" },
-    { "id": "camiseta2", "cor": "azul", "imagem": "../Imagens/Camiseta2.png" },
+    { "id": "camiseta1", "cor": "preto", "imagem": "../imagens/Camiseta1.png" },
+    { "id": "camiseta2", "cor": "azul", "imagem": "../imagens/Camiseta2.png" },
     {
       "id": "camiseta3",
       "cor": "amarelo",
-      "imagem": "../Imagens/Camiseta3.png"
+      "imagem": "../imagens/Camiseta3.png"
     },
-    { "id": "camiseta4", "cor": "verde", "imagem": "../Imagens/Camiseta4.png" },
+    { "id": "camiseta4", "cor": "verde", "imagem": "../imagens/Camiseta4.png" },
     {
       "id": "camiseta5",
       "cor": "vermelho",
-      "imagem": "../Imagens/Camiseta5.png"
+      "imagem": "../imagens/Camiseta5.png"
     }
   ],
   "bermudas": [
-    { "id": "ber1", "cor": "preto", "imagem": "../Imagens/ber1.png" },
-    { "id": "ber2", "cor": "azul", "imagem": "../Imagens/ber2.png" },
-    { "id": "ber3", "cor": "vermelho", "imagem": "../Imagens/ber3.png" },
-    { "id": "ber4", "cor": "cinza", "imagem": "../Imagens/ber4.png" },
-    { "id": "ber5", "cor": "laranja", "imagem": "../Imagens/ber5.png" }
+    { "id": "ber1", "cor": "preto", "imagem": "../imagens/ber1.png" },
+    { "id": "ber2", "cor": "azul", "imagem": "../imagens/ber2.png" },
+    { "id": "ber3", "cor": "vermelho", "imagem": "../imagens/ber3.png" },
+    { "id": "ber4", "cor": "cinza", "imagem": "../imagens/ber4.png" },
+    { "id": "ber5", "cor": "laranja", "imagem": "..imagens/ber5.png" }
   ]
 }
