@@ -45,6 +45,7 @@ img {
   display: block;
   border-radius: 5px;
   border-style: thin;
+  position: relative;
 }
 
 .menu {
@@ -191,7 +192,7 @@ img {
 .button-produto {
   margin: 30px;
   color: #fff;
-  background-color: #5cb85c;
+  background-color: blueviolet;
   border-color: #4cae4c;
   font-weight: bold;
   text-align: center;
@@ -202,4 +203,17 @@ img {
   padding: 6px 12px;
   cursor: pointer;
   white-space: nowrap;
+}
+.carrinhoItemsCount {
+  font-weight: bold;
+  color: white;
+  margin-left: 27px;
+  margin-top: 5px;
+  position: absolute;
+  top: 0px;
+  z-index: 3;
+  background-color: red;
+  border-radius: 60%;
+  width: 22px;
+  text-align: center;
 }
