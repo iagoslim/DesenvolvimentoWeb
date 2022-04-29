@@ -1,4 +1,4 @@
-let PageCart = new Array();
+
 async function fetchProdutos() {
   try {
     const response = await fetch("../items/items.json");
@@ -41,6 +41,8 @@ function pageHandler() {
 }
 
 async function loadProductsPage() {
+  const pageCartCountSpan = document.getElementById("carrinhoItemsCount")
+  pageCartCountSpan.innerHTML= `${localStorage.length}`
   const itemStoredID = getItemStoredID();
   console.log("estou na pagina de produto");
   itemData = await getProdutoByID(itemStoredID);
@@ -55,21 +57,27 @@ async function loadProductsPage() {
 
 function addToCart() {
   const itemBought = sessionStorage.getItem("itemSelected");
-  PageCart.push(itemBought);
-  if (PageCart !== null) {
-    localStorage.setItem("cart", PageCart);
-  } else {
-    appendToStorageCart(PageCart);
-  }
+  const pageCartCountSpan = document.getElementById("carrinhoItemsCount")
+  localStorage.setItem(createUID(), itemBought)
+  pageCartCountSpan.innerHTML= `${localStorage.length}`
 
-  console.log(PageCart);
-  console.log("carrinho:", localStorage.getItem("cart"));
+  
+
+  
+
+  const items = { ...localStorage };
+  console.log(localStorage.length)
+  
+  console.log("carrinho:", items);
+
+
 }
 
-function appendToStorageCart(data) {
-  var old = localStorage.getItem("cart");
-  localStorage.setItem("cart", old + data);
-}
+
+// function appendToStorageCart(data) {
+//   var old = localStorage.getItem("cart");
+//   localStorage.setItem("cart", old + data);
+// }
 
 function storeItemSelected(itemSelected) {
   var item = itemSelected;
@@ -87,6 +95,11 @@ function getItemStoredID() {
 
 function clearItemSelected() {
   sessionStorage.removeItem("itemSelected");
+}
+
+ function createUID(){
+  const uid =    Date.now().toString(36) + Math.random().toString(36).substr(2);
+  return uid.toString();
 }
 
 init();

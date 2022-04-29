@@ -1,17 +1,17 @@
 {
   "camisas": [
-    { "id": "camiseta1", "cor": "preto", "imagem": "../imagens/Camiseta1.png" },
-    { "id": "camiseta2", "cor": "azul", "imagem": "../imagens/Camiseta2.png" },
+    { "id": "camiseta1", "cor": "preto", "imagem": "../imagens/camiseta1.png" },
+    { "id": "camiseta2", "cor": "azul", "imagem": "../imagens/camiseta2.png" },
     {
       "id": "camiseta3",
       "cor": "amarelo",
-      "imagem": "../imagens/Camiseta3.png"
+      "imagem": "../imagens/camiseta3.png"
     },
-    { "id": "camiseta4", "cor": "verde", "imagem": "../imagens/Camiseta4.png" },
+    { "id": "camiseta4", "cor": "verde", "imagem": "../imagens/camiseta4.png" },
     {
       "id": "camiseta5",
       "cor": "vermelho",
-      "imagem": "../imagens/Camiseta5.png"
+      "imagem": "../imagens/camiseta5.png"
     }
   ],
   "bermudas": [
