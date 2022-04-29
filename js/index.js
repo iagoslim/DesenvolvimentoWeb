@@ -31,43 +31,57 @@ function init() {
 function pageHandler() {
   const page = document.body.id;
   switch (page) {
-    case "produto":
+    case "produto": {
       loadProductsPage();
+      fetchCarrinhoCounter();
+    }
+
       break;
     case "carrinho":
-      something();
+      loadCarrinhoPage();
+      fetchCarrinhoCounter();
       break;
+    case "home": {
+      fetchCarrinhoCounter();
+    }
+      break;
+    case "produtos": {
+      fetchCarrinhoCounter();
+    }
+      break;
+
   }
 }
 
 async function loadProductsPage() {
   const pageCartCountSpan = document.getElementById("carrinhoItemsCount")
-  pageCartCountSpan.innerHTML= `${localStorage.length}`
+  pageCartCountSpan.innerHTML = `${localStorage.length}`
   const itemStoredID = getItemStoredID();
   console.log("estou na pagina de produto");
   itemData = await getProdutoByID(itemStoredID);
   console.log(itemStoredID);
   console.log(itemData.id);
-  const productDetails = document.getElementById("produtoDetails");
+  const productDescription = document.getElementById("descricao");
+  const procuctPrice = document.getElementById("preco");
   const productImage = document.getElementById("product-image");
-  console.log(productDetails);
   productImage.innerHTML = `<img src=${itemData.imagem}>`;
-  productDetails.innerHTML = `<div> ${itemData.cor} item details  bla bla bla bla bla bla bla bla bla</div>`;
+  productDescription.innerHTML = `<div> ${itemData.descricao}</div>`
+  procuctPrice.innerHTML = `<div> R$ ${itemData.preco}</div> `
+
+}
+
+function fetchCarrinhoCounter() {
+  const pageCartCountSpan = document.getElementById("carrinhoItemsCount")
+  pageCartCountSpan.innerHTML = `${localStorage.length}`
 }
 
 function addToCart() {
   const itemBought = sessionStorage.getItem("itemSelected");
-  const pageCartCountSpan = document.getElementById("carrinhoItemsCount")
   localStorage.setItem(createUID(), itemBought)
-  pageCartCountSpan.innerHTML= `${localStorage.length}`
-
-  
-
-  
-
+  fetchCarrinhoCounter();
   const items = { ...localStorage };
   console.log(localStorage.length)
-  
+
   console.log("carrinho:", items);
 
 
@@ -97,9 +111,40 @@ function clearItemSelected() {
   sessionStorage.removeItem("itemSelected");
 }
 
- function createUID(){
-  const uid =    Date.now().toString(36) + Math.random().toString(36).substr(2);
+function createUID() {
+  const uid = Date.now().toString(36) + Math.random().toString(36).substr(2);
   return uid.toString();
 }
 
+async function calculaCarrinho() {
+  const items = retrieveCarrinho();
+  console.log(items.length)
+  let temp = 0
+  let totalCarrinho = 0
+  for (let index = 0; index < items.length; index++) {
+    temp = await getProdutoByID(items[index])
+    totalCarrinho += temp.preco
+
+  }
+  return totalCarrinho
+}
+function retrieveCarrinho() {
+  var values = [],
+    keys = Object.keys(localStorage),
+    i = keys.length;
+
+  while (i--) {
+    values.push(localStorage.getItem(keys[i]));
+  } return values;
+}
+async function loadCarrinhoPage() {
+  const precoTotalDiv = document.getElementById("precoTotal")
+  const precoCarrinho = await calculaCarrinho()
+  precoTotalDiv.innerHTML =  `Preço total do carrinho: R$ ${precoCarrinho}`
+}
+
+function limparCarrinho(){
+  localStorage.clear()
+  window.location.reload();
+}
 init();

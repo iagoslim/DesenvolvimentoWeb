@@ -43,7 +43,29 @@
     <main>
       <div class="container-product-details">
         <div id="product-image" class="product-image"></div>
-        <div id="produtoDetails" class="productDetails"></div>
+        <div id="produtoDetails" class="productDetails">
+          <div id="descricao"></div>
+          <div id="preco"></div>
+          <div id="productDetailsChooser" class="productDetailsChooser">
+            <div id="productSize">        <label for="size">Tamanho:</label>
+              <select name="size" id="cars">
+                <option value="P">P</option>
+                <option value="M">M</option>
+                <option value="G">G</option>
+                <option value="GG">GG</option>
+              </select> </div>
+              <div id="productColor">
+                <label for="color">Cor:</label>
+                <select name="color" id="cars">
+                  <option value="Preto">Preto</option>
+                  <option value="Branco">Branco</option>
+                  <option value="Vermelho">Vermelho</option>
+                  <option value="Azul">Azul</option>
+                </select> 
+              </div>
+          </div>
+        </div>
+       
         <div id="buttons">
           <button class="button-produto" onclick="addToCart()">
             Add to Cart

@@ -12,7 +12,7 @@
     <title>Trab. GA Produtos</title>
     <script src="../js/index.js" async></script>
   </head>
-  <body id="Produtos">
+  <body id="produtos">
     <header class="header">
       <div>
         <a href="../pages/index.html"
@@ -30,9 +30,12 @@
             <a class="menubutton" href="../pages/contato.html">Contato</a>
           </li>
           <li>
-            <a href="../pages/carrinho.html"
-              ><img class="carrinho" src="../imagens/carrinho.png"
-            /></a>
+            <div style="position: relative;">
+              <a href="../pages/carrinho.html"
+                ><img class="carrinho" src="../imagens/carrinho.png" />
+              </a>
+              <span id="carrinhoItemsCount" class="carrinhoItemsCount"></span>
+            </div>
           </li>
         </ul>
       </nav>
