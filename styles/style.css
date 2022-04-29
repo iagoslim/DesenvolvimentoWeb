@@ -238,3 +238,11 @@ img {
   cursor: pointer;
   white-space: nowrap;
 }
+.olCartshop{
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+.olCartshop > li{
+  list-style-type: decimal;
+  list-style-position: inside;
+}

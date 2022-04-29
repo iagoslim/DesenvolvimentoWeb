@@ -25,7 +25,6 @@ async function getProdutoByID(id) {
 
 function init() {
   document.addEventListener("DOMContentLoaded", pageHandler());
-  console.log("HTML loaded");
 }
 
 function pageHandler() {
@@ -57,10 +56,7 @@ async function loadProductsPage() {
   const pageCartCountSpan = document.getElementById("carrinhoItemsCount")
   pageCartCountSpan.innerHTML = `${localStorage.length}`
   const itemStoredID = getItemStoredID();
-  console.log("estou na pagina de produto");
   itemData = await getProdutoByID(itemStoredID);
-  console.log(itemStoredID);
-  console.log(itemData.id);
   const productDescription = document.getElementById("descricao");
   const procuctPrice = document.getElementById("preco");
   const productImage = document.getElementById("product-image");
@@ -77,21 +73,11 @@ function fetchCarrinhoCounter() {
 
 function addToCart() {
   const itemBought = sessionStorage.getItem("itemSelected");
-  localStorage.setItem(createUID(), itemBought)
+  const tamanho = document.getElementById("size").value
+  const cor = document.getElementById("color").value
+  localStorage.setItem(createUID(), itemBought + "," + tamanho + "," + cor)
   fetchCarrinhoCounter();
-  const items = { ...localStorage };
-  console.log(localStorage.length)
-
-  console.log("carrinho:", items);
-
-
 }
-
-
-// function appendToStorageCart(data) {
-//   var old = localStorage.getItem("cart");
-//   localStorage.setItem("cart", old + data);
-// }
 
 function storeItemSelected(itemSelected) {
   var item = itemSelected;
@@ -103,7 +89,7 @@ function storeItemSelected(itemSelected) {
 
 function getItemStoredID() {
   const itemStoredID = sessionStorage.getItem("itemSelected");
-  console.log(sessionStorage.getItem("itemSelected"));
+
   return itemStoredID;
 }
 
@@ -118,11 +104,11 @@ function createUID() {
 
 async function calculaCarrinho() {
   const items = retrieveCarrinho();
-  console.log(items.length)
   let temp = 0
   let totalCarrinho = 0
   for (let index = 0; index < items.length; index++) {
-    temp = await getProdutoByID(items[index])
+    const itemID = items[index].split(',')
+    temp = await getProdutoByID(itemID[0])
     totalCarrinho += temp.preco
 
   }
@@ -140,10 +126,27 @@ function retrieveCarrinho() {
 async function loadCarrinhoPage() {
   const precoTotalDiv = document.getElementById("precoTotal")
   const precoCarrinho = await calculaCarrinho()
-  precoTotalDiv.innerHTML =  `Preço total do carrinho: R$ ${precoCarrinho}`
+  await retrieveCarrinhoItemDetails()
+  precoTotalDiv.innerHTML = `Preço total do carrinho: R$ ${precoCarrinho}`
 }
 
-function limparCarrinho(){
+async function retrieveCarrinhoItemDetails() {
+  const items = retrieveCarrinho();
+  const olCartShop = document.getElementById("olCartshop")
+  let temp
+  let liCarrinho = ""
+  for (let index = 0; index < items.length; index++) {
+    const itemID = items[index].split(',')
+    const itemSize = items[index].split(',')[1]
+    const itemColor = items[index].split(',')[2]
+    temp = await getProdutoByID(itemID[0])
+
+    liCarrinho += `<li>Descrição:${temp.descricao}|Tamanho: ${itemSize}|Cor: ${itemColor} ----- Preço:R$ ${temp.preco}</li>`
+
+  }
+  olCartShop.innerHTML = liCarrinho
+}
+function limparCarrinho() {
   localStorage.clear()
   window.location.reload();
 }
