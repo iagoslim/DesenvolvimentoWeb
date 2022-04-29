@@ -46,10 +46,10 @@ async function loadProductsPage() {
   console.log(itemStoredID);
   console.log(itemData.id);
   const productDetails = document.getElementById("produtoDetails");
+  const productImage = document.getElementById("product-image");
   console.log(productDetails);
-  productDetails.innerHTML = `<div> ${itemData.cor} 
-  <img src=${itemData.imagem}>
-  </div>`;
+  productImage.innerHTML = `<img src=${itemData.imagem}>`;
+  productDetails.innerHTML = `<div> ${itemData.cor} item details  bla bla bla bla bla bla bla bla bla</div>`;
 }
 
 function storeItemSelected(itemSelected) {

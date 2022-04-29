@@ -19,6 +19,6 @@
     { "id": "ber2", "cor": "azul", "imagem": "../imagens/ber2.png" },
     { "id": "ber3", "cor": "vermelho", "imagem": "../imagens/ber3.png" },
     { "id": "ber4", "cor": "cinza", "imagem": "../imagens/ber4.png" },
-    { "id": "ber5", "cor": "laranja", "imagem": "..imagens/ber5.png" }
+    { "id": "ber5", "cor": "laranja", "imagem": "../imagens/ber5.png" }
   ]
 }
