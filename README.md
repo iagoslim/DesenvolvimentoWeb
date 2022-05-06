@@ -3,6 +3,8 @@ Atividades feitas para a disciplina de Desenvolvimento Web
 
 Aplicação completa, acessar o seguinte link: https://alissonrc.github.io/pageshop/pages/index.html
 
+Vídeo da apresentação do site: https://drive.google.com/drive/folders/187Psl0IKfYpoW0dyIJ6Irn41dtfN_Tyn?usp=sharing
+
 Requisitos do projeto:
 
 Sistema de pedido de itens em grade para atacado. 
