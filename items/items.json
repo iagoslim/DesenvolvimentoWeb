@@ -4,31 +4,36 @@
       "id": "camiseta1",
       "descricao": "Camiseta básica",
       "imagem": "../imagens/camiseta1.png",
-      "preco": 39.99
+      "preco": 39.99,
+      "color": "Branco"
     },
     {
       "id": "camiseta2",
       "descricao": "Camiseta básica",
       "imagem": "../imagens/camiseta2.png",
-      "preco": 39.99
+      "preco": 39.99,
+      "color": "Preto"
     },
     {
       "id": "camiseta3",
       "descricao": "Camiseta básica",
       "imagem": "../imagens/camiseta3.png",
-      "preco": 39.99
+      "preco": 39.99,
+      "color": "Cinza"
     },
     {
       "id": "camiseta4",
       "descricao": "Camiseta básica",
       "imagem": "../imagens/camiseta4.png",
-      "preco": 39.99
+      "preco": 39.99,
+      "color": "Azul"
     },
     {
       "id": "camiseta5",
       "descricao": "Camiseta básica",
       "imagem": "../imagens/camiseta5.png",
-      "preco": 39.99
+      "preco": 39.99,
+      "color": "Vermelho"
     }
   ],
   "bermudas": [
@@ -36,31 +41,36 @@
       "id": "ber1",
       "descricao": "Bermuda básica",
       "imagem": "../imagens/ber1.png",
-      "preco": 44.90
+      "preco": 44.90,
+      "color": "Branco"
     },
     {
       "id": "ber2",
       "descricao": "Bermuda básica",
       "imagem": "../imagens/ber2.png",
-      "preco": 44.90
+      "preco": 44.90,
+      "color": "Preto"
     },
     {
       "id": "ber3",
       "descricao": "Bermuda básica",
       "imagem": "../imagens/ber3.png",
-      "preco": 44.90
+      "preco": 44.90,
+      "color": "Cinza"
     },
     {
       "id": "ber4",
       "descricao": "Bermuda básica",
       "imagem": "../imagens/ber4.png",
-      "preco": 44.90
+      "preco": 44.90,
+      "color": "Azul"
     },
     {
       "id": "ber5",
       "descricao": "Bermuda básica",
       "imagem": "../imagens/ber5.png",
-      "preco": 44.90
+      "preco": 44.90,
+      "color": "Vermelho"
     }
   ]
 }
