@@ -56,6 +56,16 @@
                 <option value="GG">GG</option>
               </select>
             </div>
+            <label for="quantidade">Quantidade: </label>
+
+            <input
+              value="1"
+              type="number"
+              id="quantidade"
+              name="quantidade"
+              min="1"
+              max="10"
+            />
           </div>
         </div>
 
@@ -64,8 +74,8 @@
             Adicionar ao carrinho
           </button>
         </div>
-        <div id="itemAdded" style="display: none;">
-            <p>Item adicionado</p>
+        <div id="itemAdded" class="item-added-alert">
+          <p>Item adicionado ao carrinho !</p>
         </div>
       </div>
     </main>

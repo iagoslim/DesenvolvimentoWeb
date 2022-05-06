@@ -74,8 +74,11 @@ function fetchCarrinhoCounter() {
 function addToCart() {
   const itemBought = sessionStorage.getItem("itemSelected");
   const tamanho = document.getElementById("size").value;
-  itemAdded('itemAdded');
-  localStorage.setItem(createUID(), itemBought + "," + tamanho);
+  let quantidade = document.getElementById("quantidade").value;
+  for (let index = 0; index < quantidade; index++) {
+    localStorage.setItem(createUID(), itemBought + "," + tamanho);
+  }
+  itemAdded("itemAdded");
   fetchCarrinhoCounter();
 }
 
@@ -142,11 +145,12 @@ async function retrieveCarrinhoItemDetails() {
     const itemSize = items[index].split(",")[1];
     temp = await getProdutoByID(itemID[0]);
 
-    liCarrinho += `<div class="div-items-cart">
-    
+    liCarrinho += `<div class="div-items-cart">    
     <li class="li-item-cart">Descrição:${temp.descricao}|Tamanho: ${itemSize}|Cor: ${temp.color} ----- Preço:R$ ${temp.preco}</li>
-
-    <a id = ${itemUUID} class="remove-item-link" onclick="DeleteItemCart(this.id)"><i class="fa fa-trash-o"></i> <span class="span-remove-item">Remover produto</span></a>
+      <a id = ${itemUUID} class="remove-item-link" onclick="DeleteItemCart(this.id)">
+        <i class="fa fa-trash-o"></i> 
+       <span class="span-remove-item">Remover produto</span>
+      </a>
    
     </div>`;
   }
@@ -160,20 +164,12 @@ function limparCarrinho() {
   localStorage.clear();
   window.location.reload();
 }
-init();
-
 
 function itemAdded(el) {
-      //  alert("Item adicionado!");
-        var display = document.getElementById(el).style.display;
-        
-        if(display == "none")
-            document.getElementById(el).style.display = 'block';
-            setTimeout(myCallback(), 500000);
-            //setInterval(myCallback(el), 50000000);
-              document.getElementById(el).style.display = 'none';
-        }
-
-function myCallback() {// Your code here
-            console.log("teste");
+  document.getElementById(el).style.display = "block";
+  setTimeout(() => {
+    document.getElementById(el).style.display = "none";
+  }, 700);
 }
+
+init();

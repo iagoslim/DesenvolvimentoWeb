@@ -258,10 +258,7 @@ img {
   width: 100%;
   padding: 0%;
 }
-.olCartshop > li {
-  list-style-type: decimal;
-  list-style-position: inside;
-}
+
 .div-items-cart {
   border: solid black 1px;
   display: inline-flex;
@@ -294,4 +291,22 @@ img {
   margin-top: 15px;
   margin-bottom: 15px;
   margin-left: 40px;
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+.item-added-alert {
+  color: #fff;
+
+  box-shadow: 0 4px 10px 0 rgb(162, 0, 255);
+  background-color: blueviolet;
+  display: none;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+
+  padding: 6px 12px;
+  cursor: pointer;
+  white-space: nowrap;
 }
