@@ -1,60 +1,66 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="../styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="shortcut icon"
+      type="imagex/png"
+      href="../imagens/si.logocircle.png"
+    />
+    <title>Trab. GA Carrinho</title>
+    <script src="../js/index.js" async></script>
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" type="text/css" href="../styles/style.css" />
-  <link rel="shortcut icon" type="imagex/png" href="../imagens/si.logocircle.png" />
-  <title>Trab. GA Carrinho</title>
-  <script src="../js/index.js" async></script>
-</head>
-
-<body id="carrinho">
-  <header class="header">
-    <div>
-      <a href="../pages/index.html"><img class="logo" src="../imagens/slimImports.png" /></a>
-    </div>
-    <nav>
-      <ul class="menu">
-        <li><a class="menubutton" href="../pages/index.html">Home</a></li>
-        <li>
-          <a class="menubutton" href="../pages/produtos.html">Produtos</a>
-        </li>
-        <li><a class="menubutton" href="../pages/sobre.html">Sobre</a></li>
-        <li>
-          <a class="menubutton" href="../pages/contato.html">Contato</a>
-        </li>
-        <li>
-          <div style="position: relative;">
-            <a href="../pages/carrinho.html"
-              ><img class="carrinho" src="../imagens/carrinho.png" />
-            </a>
-            <span id="carrinhoItemsCount" class="carrinhoItemsCount"></span>
-          </div>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  <div class="cabecalho">
-    <img src="../imagens/vid11.gif" />
-    <h1>CARRINHO DE COMPRAS</h1>
-  </div>
-
-  <section class="fundo">
-    <ol id="olCartshop" class="olCartshop" >
-
-    </ol>
-    <div>
-      <div id="precoTotal">
-
+  <body id="carrinho">
+    <header class="header">
+      <div>
+        <a href="../pages/index.html"
+          ><img class="logo" src="../imagens/slimImports.png"
+        /></a>
       </div>
-      <div><button class="button-limparCarrinho" onclick="limparCarrinho()">Limpar Carrinho</button></div>
+      <nav>
+        <ul class="menu">
+          <li><a class="menubutton" href="../pages/index.html">Home</a></li>
+          <li>
+            <a class="menubutton" href="../pages/produtos.html">Produtos</a>
+          </li>
+          <li><a class="menubutton" href="../pages/sobre.html">Sobre</a></li>
+          <li>
+            <a class="menubutton" href="../pages/contato.html">Contato</a>
+          </li>
+          <li>
+            <div style="position: relative">
+              <a href="../pages/carrinho.html"
+                ><img class="carrinho" src="../imagens/carrinho.png" />
+              </a>
+              <span id="carrinhoItemsCount" class="carrinhoItemsCount"></span>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="cabecalho">
+      <img src="../imagens/vid11.gif" />
+      <h1>CARRINHO DE COMPRAS</h1>
     </div>
 
-
-  </section>
-</body>
-
+    <section class="fundo">
+      <ol id="olCartshop" class="olCartshop"></ol>
+      <div>
+        <div id="precoTotal"></div>
+        <div>
+          <button class="button-limparCarrinho" onclick="limparCarrinho()">
+            Limpar Carrinho
+          </button>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>

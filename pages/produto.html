@@ -30,7 +30,7 @@
             <a class="menubutton" href="../pages/contato.html">Contato</a>
           </li>
           <li>
-            <div style="position: relative;">
+            <div style="position: relative">
               <a href="../pages/carrinho.html"
                 ><img class="carrinho" src="../imagens/carrinho.png" />
               </a>
@@ -47,29 +47,30 @@
           <div id="descricao"></div>
           <div id="preco"></div>
           <div id="productDetailsChooser" class="productDetailsChooser">
-            <div id="productSize">        <label for="size">Tamanho:</label>
-              <select name="size" id="size" >
-                
+            <div id="productSize">
+              <label for="size">Tamanho:</label>
+              <select name="size" id="size">
                 <option value="P">P</option>
                 <option value="M">M</option>
                 <option value="G">G</option>
                 <option value="GG">GG</option>
-              </select> </div>
-              <div id="productColor">
-                <label for="color">Cor:</label>
-                <select name="color" id="color">
-                  <option value="Preto">Preto</option>
-                  <option value="Branco">Branco</option>
-                  <option value="Vermelho">Vermelho</option>
-                  <option value="Azul">Azul</option>
-                </select> 
-              </div>
+              </select>
+            </div>
+            <div id="productColor">
+              <label for="color">Cor:</label>
+              <select name="color" id="color">
+                <option value="Preto">Preto</option>
+                <option value="Branco">Branco</option>
+                <option value="Vermelho">Vermelho</option>
+                <option value="Azul">Azul</option>
+              </select>
+            </div>
           </div>
         </div>
-       
-        <div id="buttons">
+
+        <div class="div-button-produto" id="buttons">
           <button class="button-produto" onclick="addToCart()">
-            Add to Cart
+            Adicionar ao carrinho
           </button>
         </div>
       </div>
