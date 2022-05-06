@@ -17,7 +17,7 @@ Sistema de pedido de itens em grade para atacado.
 
 Desenvolvimento do projeto:
 
-Para imagens:
+Para imagens dos produtos:
 - Utilizar o formato .png
 - Dimensões 230x230 pixels
 - Dica: baixar uma, e utilizar como modelo para deixar centralizada/padrão.
