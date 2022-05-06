@@ -74,8 +74,8 @@ function fetchCarrinhoCounter() {
 function addToCart() {
   const itemBought = sessionStorage.getItem("itemSelected");
   const tamanho = document.getElementById("size").value;
-  const cor = document.getElementById("color").value;
-  localStorage.setItem(createUID(), itemBought + "," + tamanho + "," + cor);
+  itemAdded('itemAdded');
+  localStorage.setItem(createUID(), itemBought + "," + tamanho);
   fetchCarrinhoCounter();
 }
 
@@ -140,12 +140,11 @@ async function retrieveCarrinhoItemDetails() {
     const itemUUID = localStorage.key(index);
     const itemID = items[index].split(",");
     const itemSize = items[index].split(",")[1];
-    const itemColor = items[index].split(",")[2];
     temp = await getProdutoByID(itemID[0]);
 
     liCarrinho += `<div class="div-items-cart">
     
-    <li class="li-item-cart">Descrição:${temp.descricao}|Tamanho: ${itemSize}|Cor: ${itemColor} ----- Preço:R$ ${temp.preco}</li>
+    <li class="li-item-cart">Descrição:${temp.descricao}|Tamanho: ${itemSize}|Cor: ${temp.color} ----- Preço:R$ ${temp.preco}</li>
 
     <a id = ${itemUUID} class="remove-item-link" onclick="DeleteItemCart(this.id)"><i class="fa fa-trash-o"></i> <span class="span-remove-item">Remover produto</span></a>
    
@@ -162,3 +161,19 @@ function limparCarrinho() {
   window.location.reload();
 }
 init();
+
+
+function itemAdded(el) {
+      //  alert("Item adicionado!");
+        var display = document.getElementById(el).style.display;
+        
+        if(display == "none")
+            document.getElementById(el).style.display = 'block';
+            setTimeout(myCallback(), 500000);
+            //setInterval(myCallback(el), 50000000);
+              document.getElementById(el).style.display = 'none';
+        }
+
+function myCallback() {// Your code here
+            console.log("teste");
+}
